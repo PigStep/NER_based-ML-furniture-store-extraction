@@ -8,12 +8,25 @@
   <script>
     async function predict() {
       const text = document.getElementById("text").value;
-      const response = await fetch("http://localhost:8000/predict", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text: text })
-      });
-      document.getElementById("result").innerText = await response.json();
+      const resultElement = document.getElementById("result");
+      
+      try {
+        const response = await fetch("http://localhost:8000/predict", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text: text })
+        });
+
+        if (!response.ok) {
+          throw new Error(`Ошибка HTTP: ${response.status}`);
+        }
+
+        const data = await response.json();
+        resultElement.innerText = data.result;  // Выводим поле "result" из JSON
+
+      } catch (error) {
+        resultElement.innerText = `Ошибка: ${error.message}`;
+      }
     }
   </script>
 </body>

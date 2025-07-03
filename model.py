@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import torch
 
-model_path = "product_model_ner"
+model_path = ".\product_ner_model"
 
 # Load model and tokenizer
 model = AutoModelForTokenClassification.from_pretrained(model_path)
