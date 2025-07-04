@@ -1,4 +1,4 @@
-# E-commerce Product Name Extraction using NER
+# NER_based-ML-furniture-store-extraction
 
 This project demonstrates a process for extracting product names from e-commerce website URLs using a fine-tuned Named Entity Recognition (NER) model.
 
