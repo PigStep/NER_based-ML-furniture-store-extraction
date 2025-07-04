@@ -7,7 +7,7 @@ This project demonstrates a process for extracting product names from e-commerce
 The project involves the following steps:
 
 ## Project Structure
-
+```
 ├── notebook/
 │   ├── annotations.json   # File with manual train annotations
 │   ├── notebook.ipynb     # Model notebook (you must get there `product_ner_model`)
@@ -20,7 +20,7 @@ The project involves the following steps:
 ├── requirements.txt       # Python dependencies
 ├── README.md              # Project documentation
 └── venv/                  # (Optional) Virtual environment
-
+```
 ## Setup and Installation
 
 1. **Clone the repository**:
