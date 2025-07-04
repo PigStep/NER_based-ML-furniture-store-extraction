@@ -70,21 +70,23 @@ def predict(url):
             raw_text = extract_top_product_names(url)
 
             texts = [t[0] for t in raw_text]
-            encoded = tokenizer(texts, return_tensors="pt", padding=True, truncation=True, is_split_into_words=True)
+            encoded = tokenizer(texts, return_tensors="pt", padding=True, truncation=True)
 
             with torch.no_grad():
                 outputs = model(**encoded)
             
-            predictions = torch.argmax(outputs.logits, dim=2)
+            logits = outputs.logits.squeeze(0)
+            predictions = logits.argmax(dim=-1)
 
             results = []
             for i, text in enumerate(texts):
                 token_ids = encoded["input_ids"][i]
                 tokens = tokenizer.convert_ids_to_tokens(token_ids)
+
                 labels = [model.config.id2label[p.item()] for p in predictions[i]]
                 results.append(list(zip(tokens, labels)))
 
             return results
         
     except Exception as e:
-        print(f"Error occuring: {e}")
+        return(f"Error occuring: {e}")

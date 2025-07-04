@@ -13,19 +13,19 @@
       try {
         const response = await fetch("http://localhost:8000/predict", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ text: text })
+          headers: { "Content-Type": "text/plain" },
+          body: text
         });
 
         if (!response.ok) {
-          throw new Error(`Ошибка HTTP: ${response.status}`);
+          throw new Error(`HTTP error: ${response.status}`);
         }
 
         const data = await response.json();
-        resultElement.innerText = data.result;  // Выводим поле "result" из JSON
+        resultElement.innerText = data.result;  // "result" from JSON
 
       } catch (error) {
-        resultElement.innerText = `Ошибка: ${error.message}`;
+        resultElement.innerText = `Error: ${error.message}`;
       }
     }
   </script>
