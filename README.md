@@ -6,25 +6,20 @@ This project demonstrates a process for extracting product names from e-commerce
 
 The project involves the following steps:
 
+## Project Structure
+
+├── notebook/
+│   ├── annotations.json   # File with manual train annotations
+│   ├── notebook.ipynb     # Model notebook (you must get there `product_ner_model`)
+│   ├── product_ner_model/ # Directory with the fine-tuned NER model (must be lodaded from `notebook.ipynb`)
+│   ├── ParsingURL_list.csv # CSV file with accedible list (created from `notebook.ipynb`)
+│   └── URL_list.csv       # CSv file with URLS to process
 ├── index.html             # Web interface (frontend)
 ├── main.py                # FastAPI backend server
 ├── model.py               # Model logic and inference
-├── product_ner_model/     # Directory with the fine-tuned NER model
 ├── requirements.txt       # Python dependencies
 ├── README.md              # Project documentation
 └── venv/                  # (Optional) Virtual environment
-
-## Project Structure
-
-```
-.
-├── index.html              # Frontend interface
-├── main.py                 # FastAPI backend
-├── model.py               # Core model functionality
-├── product_ner_model/     # Fine-tuned model directory
-├── README.md              # This file
-└── venv/                  # Virtual environment
-```
 
 ## Setup and Installation
 
