@@ -1,0 +1,12 @@
+fastapi==0.109.1
+uvicorn==0.27.0
+transformers==4.37.2
+torch==2.1.2
+requests==2.31.0
+beautifulsoup4==4.12.2
+python-multipart==0.0.6
+tqdm==4.66.1
+numpy==1.26.3
+pandas==2.1.4
+seqeval==1.2.2
+evaluate==0.4.1
