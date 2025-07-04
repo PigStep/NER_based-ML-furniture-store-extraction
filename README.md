@@ -6,14 +6,13 @@ This project demonstrates a process for extracting product names from e-commerce
 
 The project involves the following steps:
 
-1. **URL Preprocessing**: Reads a list of URLs and filters them to ensure they are accessible and suitable for parsing.
-2. **Data Parsing**: Extracts potential product names from the filtered URLs using a combination of HTML tag analysis (h1, h2, h3) and class name keyword matching.
-3. **Annotation Preparation**: Creates a text file (`annote.txt`) containing the extracted text snippets for manual annotation. This annotated data is then used to create a training dataset (`annotations.json`) in IOB format.
-4. **Model Fine-tuning**: Fine-tunes a pre-trained `bert-base-multilingual-cased` model for token classification (NER) using the annotated dataset.
-5. **Model Evaluation**: Evaluates the performance of the fine-tuned model using metrics like precision, recall, F1-score, and accuracy.
-6. **Model Saving**: Saves the fine-tuned model for later deployment.
-7. **API Deployment**: Provides a FastAPI backend to serve the model predictions.
-8. **Web Interface**: Includes a simple HTML frontend to interact with the model.
+├── index.html             # Web interface (frontend)
+├── main.py                # FastAPI backend server
+├── model.py               # Model logic and inference
+├── product_ner_model/     # Directory with the fine-tuned NER model
+├── requirements.txt       # Python dependencies
+├── README.md              # Project documentation
+└── venv/                  # (Optional) Virtual environment
 
 ## Project Structure
 
