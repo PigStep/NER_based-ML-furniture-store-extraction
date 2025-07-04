@@ -4,11 +4,10 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# Разрешаем запросы от любых источников (для разработки)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Можно указать конкретный домен, например "http://localhost:3000"
-    allow_methods=["*"],  # Разрешаем все методы, включая OPTIONS
+    allow_origins=["*"],  #Allow everything (only for development use)
+    allow_methods=["*"], 
     allow_headers=["*"],
 )
 
